@@ -1,19 +1,64 @@
-<h1 align="center">Hi 👋, I'm Bipin Kori</h1>
-<h3 align="center">Passionate Full Stack ASP.Net developer from India</h3>
+using System;
+using System.IO;
 
-- 🌱 I’m currently learning **.NET Technologies.**
+class Program
+{
+    static void Main()
+    {
+        string username = "YourUsername";
+        string name = "Your Name";
+        string skills = ".NET, C#, ASP.NET";
+        string bio = "Passionate .NET developer with experience in building web applications.";
 
-- 👨‍💻 All of my projects are available at [https://github.com/bskori](https://github.com/bskori)
+        string readmeContent = GenerateReadme(username, name, skills, bio);
+        string readmeFilePath = "README.md";
 
-- 📫 How to reach me **bipinkori82@gmail.com**
+        // Write the README content to a file
+        File.WriteAllText(readmeFilePath, readmeContent);
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/https://www.linkedin.com/in/bipinkori/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/bipinkori/" height="30" width="40" /></a>
-<a href="https://www.leetcode.com/https://leetcode.com/bskori9175/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="https://leetcode.com/bskori9175/" height="30" width="40" /></a>
-</p>
+        Console.WriteLine("README file generated successfully!");
+    }
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/> </a> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://dotnet.microsoft.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original-wordmark.svg" alt="dotnet" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://golang.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" alt="go" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.microsoft.com/en-us/sql-server" target="_blank" rel="noreferrer"> <img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="mssql" width="40" height="40"/> </a> <a href="https://www.photoshop.com/en" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg" alt="photoshop" width="40" height="40"/> </a> <a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> </p>
+    static string GenerateReadme(string username, string name, string skills, string bio)
+    {
+        string readmeTemplate = @"
+# Hi there, I'm {name}! 👋
 
-<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=bskori&show_icons=true&locale=en&layout=compact" alt="bskori" /></p>
+## About Me
+
+- 🔭 I’m currently working on {skills}
+- 🌱 I’m currently learning new technologies and frameworks
+- 👯 I’m looking to collaborate on open source projects
+- 📫 How to reach me: [email](mailto:your-email@example.com)
+- 😄 Pronouns: He/Him
+
+## My GitHub Stats
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username={username}&show_icons=true&count_private=true)
+
+## Skills
+
+- .NET
+- C#
+- ASP.NET
+
+## Projects
+
+- [Project 1](https://github.com/{username}/project1)
+- [Project 2](https://github.com/{username}/project2)
+
+## Contact Me
+
+- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/your-profile)
+- Twitter: [@your-twitter-handle](https://twitter.com/your-twitter-handle)
+
+";
+
+        // Replace placeholders with actual values
+        readmeTemplate = readmeTemplate.Replace("{username}", username);
+        readmeTemplate = readmeTemplate.Replace("{name}", name);
+        readmeTemplate = readmeTemplate.Replace("{skills}", skills);
+
+        return readmeTemplate;
+    }
+}
